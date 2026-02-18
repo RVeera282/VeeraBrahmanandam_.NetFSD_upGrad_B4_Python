@@ -1,0 +1,62 @@
+<!-- R Veera Brahmanandam - HTML5 - Day 2 - Hands On -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Paragraph -->
+    <p class="intro-text">
+        <b>Introduction:</b><br>
+        Hello I'm Ryali Veera From Rajahmundry, Andhra Pradesh. <br>
+        Please fill in the details below to complete your student registration.
+    </p>
+
+    <section>
+        <p>This is the Section Box and Border</p>
+    </section>
+
+    <div>
+        <p>This Div shows the margin and padding </p>
+    </div>
+
+    <h1>Student Registration Form</h1>
+
+    <form action="success.html">
+
+        <!-- Name -->
+        <label>Student Name: </label>
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <br><br>
+
+        <!-- Email -->
+        <label>Email ID: </label>
+        <input type="text" name="email" placeholder="Enter your email" required>
+         <br><br>
+
+        <!-- Phone Number -->
+        <label>Mobile Number: </label>
+        <input type="tel" name="phone" pattern="[0-9]{10}" placeholder="Enter your mobile number" required>
+         <br><br>
+
+        <!-- Age -->
+        <label>Age: </label>
+        <input type="number" name="age" min="18" max="25" placeholder="Enter your age">
+         <br><br>
+
+        <!-- Date of Birth -->
+        <label>Date of Birth</label>
+        <input type="date" name="dob">
+         <br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Register">
+        <br><br>
+    </form>
+
+</body>
+</html>

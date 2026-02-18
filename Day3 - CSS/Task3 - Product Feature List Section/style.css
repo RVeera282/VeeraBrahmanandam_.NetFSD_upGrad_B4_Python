@@ -1,0 +1,47 @@
+/* Element selector */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+}
+
+/* Class selector */
+.feature-section {
+    width: 60%;
+    margin: 50px auto;
+    background-color: #ffff;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* Descedant selector */
+.feature-section h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+/* Class selector */
+.feature-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Descendant selector */
+.feature-list li {
+    background-color: #eaf2f8;
+    color: #34495e;
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 1px solid #aed6f1;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.feature-list li:hover {
+    background-color: #d6eaf8;
+    color: #1a5276;
+    transform: translateX(5px);
+}

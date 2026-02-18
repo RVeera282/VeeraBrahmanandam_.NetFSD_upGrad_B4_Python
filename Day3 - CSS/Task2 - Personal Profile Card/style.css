@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 40px;
+}
+
+/* profile card */
+
+.profile-card {
+    width: 300px;
+    background-color: #ffff;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+
+    /* Box Model */
+    padding: 20px;
+    margin: auto;
+
+    /* Text formatting */
+    text-align: center;
+}
+
+/* Name */
+
+.profile-card h1 {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: #0056b3;
+}
+
+/* Role */
+
+.role {
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+/* description */
+.description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Contact Button */
+.contact-btn {
+    background-color: rgb(18, 18, 118);
+    color: #ffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background-color: rgb(18, 18, 118);
+}

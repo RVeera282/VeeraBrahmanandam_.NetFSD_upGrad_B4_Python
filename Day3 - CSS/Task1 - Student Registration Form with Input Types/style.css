@@ -1,0 +1,143 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: rgb(18, 18, 118);
+    margin: 0;
+    padding: 0;
+    min-height: 560px;
+
+    /* center the content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-text {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    gap: 10px;
+
+    background: rgb(44, 36, 36);
+    padding: 20px 20px 20px 20px;
+
+    border-radius: 12px;
+}
+
+.intro-text p {
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+section {
+    color: rgb(0, 29, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    border: 50px;
+    width: 900px;
+
+    background: rgb(146, 73, 73);
+    padding: 20px 20px 20px 20px;
+
+    border-radius: 12px;
+}
+
+section p {
+    color: gray;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 35px;
+}
+
+div {
+    background: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+}
+
+div p {
+    padding: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Container Effect */
+
+form, body > div {
+    background-color: #ffff;
+    padding: 30px 40px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    margin-right: 15px;
+    border-radius: 12px;
+    width: 850px;
+    box-shadow: 0 10px 25px;
+}
+
+/* Headings */
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+    font-size: 30px;
+    margin-right: 30px;
+    margin-top: 40px;
+}
+
+/* labels */
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Submit Button */
+input[type="submit"] {
+    width: 100%;
+    background: rgb(18, 18, 118);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+/* Success Page */
+body.success-page {
+    margin-left: 70px;
+    text-align: center;
+}
+
+body.success-page h1 {
+    color: white;
+}
