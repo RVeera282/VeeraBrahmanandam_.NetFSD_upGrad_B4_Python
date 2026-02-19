@@ -1,0 +1,53 @@
+<!-- R Veera Brahmanandam - day 4 - JavaScript - Hands On Tasks 
+ 
+•	Store signal color in a variable ("red", "yellow", "green") - Done
+•	Use a switch statement to display - Done
+•   Handle invalid signal input gracefully - Done
+•	Use console.log() for output - Done
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Signal Simulator</title>
+</head>
+<body>
+    
+    <h1>Traffic Signal</h1>
+
+    <script>
+
+        // 1. Take Signal color from user
+        let signal = prompt("Enter traffic signal color (red, yellow, green)");
+
+        switch(signal)
+        {
+            case "red" :
+            {
+                console.log("Stop");
+                break;
+            }
+
+            case "yellow" :
+            {
+                console.log("Get Ready");
+                break;
+            }
+
+            case "green" :
+            {
+                console.log("Go")
+                break;
+            }
+
+            default : 
+            {
+                console.log("Invalid Signal. Pls enter Red, Yellow, or Green.");
+            }
+        }
+    </script>
+
+</body>
+</html>

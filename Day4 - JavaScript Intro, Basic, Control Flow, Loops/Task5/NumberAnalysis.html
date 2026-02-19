@@ -1,0 +1,49 @@
+<!-- R Veera Brahmanandam - Day 4 - JavaScript - Hands On Tasks
+
+Store a number in a variable - Done
+Check positive or negative using ternary operator - Done
+checks Even or odd using if else - Done
+Use a loop to rpint all numbers from 1 to the given number - Done
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Analysis Tool</title>
+</head>
+<body>
+    <h1>Numbers</h1>
+
+    <script>
+
+        let number = prompt("Enter Number: ");
+
+        let check = (number >= 0)? "Positive" : "Negative";
+
+        console.log(number,"is a", check, "Number");
+
+        if(number % 2 == 0)
+        {
+            console.log("Even Number : ",number);
+        }
+        else 
+        {
+            console.log("Odd Number : ",number);
+        }
+
+        console.log("Numbers from 1 to " +number+ " :");
+
+        let i;
+
+        for(i=1; i<=number; i++)
+        {
+            console.log(i);
+        }
+
+    </script>
+
+</body>
+</html>

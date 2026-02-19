@@ -1,0 +1,53 @@
+<!-- R Veera Brahmanadam - Day4 - JavaScript - Hands On Task 
+ 
+•	Store purchase amount in a variable - Done
+•	Use only primitive data types (Number) -Done
+•	Apply discount rules using if-else statements - Done
+•	Use arithmetic operators - Done
+•   Calculate final payable amount - Done
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Discount Calculator</title>
+</head>
+<body>
+    <h1>Discount Calculator</h1>
+
+    <script>
+
+        let purchaseAmount = 4500;
+
+        let discount = 0;
+        let finalAmount = 0;
+
+        if(purchaseAmount >= 5000)
+        {
+            discount = purchaseAmount * 0.20; // Arithmetic Operator
+        }
+        else if(purchaseAmount >= 3000)
+        {
+            // Amount >= 3000 ----> 10% discount
+            discount = purchaseAmount * 0.10; // Arithmetic Operator Used
+        }
+        else 
+        {
+            // Amount < 3000 ---> No discount
+            discount = 0;
+        }
+
+        finalAmount = purchaseAmount - discount;
+
+        // Dsiplay Reslt
+        console.log("Purchase Amount: ", purchaseAmount);
+        console.log("Discount Amount: ",discount);
+        console.log("final Payable Amount: ", finalAmount);
+
+    </script>
+
+
+</body>
+</html>

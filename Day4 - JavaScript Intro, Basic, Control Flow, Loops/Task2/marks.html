@@ -1,0 +1,62 @@
+<!-- R Veera Brahmanadam - Day4 - JavaScript - Hands On Task
+
+•	Accept the student’s marks as a variable - Done
+•	Use if–else statements to assign grades - Done
+•	Use JavaScript variables (let or const) - Done (let)
+•	Use numeric data types - Done
+•	Use comparison and logical operators- Done
+•	No functions or arrays allowed - Done
+•	Output using console.log() or document.write() - Done
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Grade Evaluator</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <h1>Students Grade</h1>
+
+    <script>
+
+        let marks = prompt("Enter your marks: ");
+
+        if(isNaN(marks))
+        {
+            document.write("Invalid Input");
+        }
+        else if(marks >= 75)
+        {
+            document.write("Grade A");
+        }
+        else if(marks >= 60)
+        {
+            document.write("Grade B");
+        }
+        else if(marks >= 40)
+        {
+            document.write("Grade C");
+        }
+        else if(marks > 0 && marks <= 39)
+        {
+            document.write("Fail");
+        }
+        else 
+        {
+            document.write("Negative Marks are not allowed for Students Unless any copying happen😉😉");
+        }
+
+    </script>
+</body>
+</html>
+
+<!--
+
+
+
+
+-->

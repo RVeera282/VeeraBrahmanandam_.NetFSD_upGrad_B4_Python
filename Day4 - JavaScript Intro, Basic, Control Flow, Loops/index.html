@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Condition Example</title>
+</head>
+<body>
+    
+    <h2>Voting Eligibilty Check</h2>
+
+    <script>
+        
+    // if-else Loop
+    /*  
+        let age = 20;
+
+        if(age >= 18)
+        {
+            alert("You are eligible to vote");
+        }
+        else 
+        {
+            alert("You are not eligible to vote");
+        }
+    */  
+   
+    // else-if Ladder
+    /*
+    let age = prompt("Enter your age");
+
+    if(age <= 12)
+    {
+        alert("You are a child");
+    }
+    else if(age > 12 && age <= 18)
+    {
+        alert("You are a Teenager");
+    }
+    else 
+    {
+        alert("You are adult");
+    }
+
+    */
+
+    // for..of Loop
+    /*
+        let numbers = [10,20,30,40,50];
+
+        for(let number of numbers)
+        {
+            console.log(number);
+        }
+    */ 
+
+    // for..in Loop
+    /*
+
+    let person = {
+        name: "R Veera",
+        age: 30,
+        city: "Rajahmundry"
+    };
+
+    for(let key in person)
+    {
+        alert(key+ ": "+person[key]);
+    }
+
+    */
+
+    /* Hoisted Function
+
+    greet();
+
+    function greet()
+    {
+        console.log("Hello Javascript");
+    }
+    */
+
+    // First Class Function
+
+    /*
+
+    let greet = function() {
+        console.log("Hello Javascript");
+    };
+
+    greet();
+
+    */
+
+    // Switch Case
+    
+    let a = Number(prompt("Enter first number: "));
+    let b = Number(prompt("Enter second number: "));
+
+    let op = prompt("Enter operator (+, -, *, /)");
+
+    switch(op)
+    {
+        case "+":
+            alert(a + b);
+            break;
+
+        case "-":
+            alert(a - b);
+            break;
+
+        case "*":
+            alert(a * b);
+            break;
+
+        case "/":
+            alert(a / b);
+            break;
+
+        default :
+            alert("Invalid operator");
+    }
+        
+    
+
+    </script>
+
+</body>
+</html>
