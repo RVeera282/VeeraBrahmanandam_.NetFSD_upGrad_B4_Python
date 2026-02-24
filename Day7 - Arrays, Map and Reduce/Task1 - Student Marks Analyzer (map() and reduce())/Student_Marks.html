@@ -1,0 +1,139 @@
+<!-- Day 7 - JavaScript - R Veera Brahmanandam - Hands On Task 
+
+1. STUDENT MARKS ANALYZER
+- Store student marks in an array. - Done
+- Calculate total and average marks using array methods.
+- Display pass/fail result based on average.
+- Use let/const appropriately.
+- Use arrow functions for calculations.
+- Display output using template literals
+- Must use array methods like reduce() and map().
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Marks Analyzer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            width: 380px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 360px;
+            padding: 10px;
+            margin: 10px 0 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #43a047;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        .result p {
+            margin: 6px 0;
+        }
+
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+    <body>
+
+        <div class="container">
+            <h1>Student Marks Analyzer</h1>
+
+            <label>Enter Marks (comma separated)</label>
+            <input type="text" id="marksInput" placeholder="e.g. 78,85,90,66">
+
+            <button onclick="analyzeMarks()">Analyze</button>
+
+            <div class="result" id="output"></div>
+        </div>
+
+    <script>
+        function analyzeMarks() {
+
+            // Get input from user
+            const input = document.getElementById("marksInput").value;
+
+            // Convert input string to array of numbers (map)
+            const marks = input.split(",").map(mark => Number(mark.trim()));
+
+            // Calculate total using reduce
+            const total = marks.reduce((sum, n) => sum + n, 0);
+
+            // Calculate average
+            const average = total / marks.length;
+
+            // Pass / Fail logic
+            const result = average >= 50 ? "PASS" : "FAIL";
+
+            // Display output
+            document.getElementById("output").innerHTML = `
+                <p><strong>Marks:</strong> ${marks.join(", ")}</p>
+                <p><strong>Total:</strong> ${total}</p>
+                <p><strong>Average:</strong> ${average.toFixed(2)}</p>
+                <p><strong>Result:</strong> 
+                    <span class="${result === "PASS" ? "pass" : "fail"}">
+                        ${result}
+                    </span>
+                </p>
+            `;
+        }
+    </script>
+
+</body>
+</html>
