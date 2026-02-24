@@ -1,0 +1,100 @@
+<!-- Day 5 - JavaScript - R Veera Brahmanandam - Hands On Tasks -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info Display</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #5a67d8;
+        }
+
+        .info {
+            display: none; /* hidden initially */
+            text-align: left;
+        }
+
+        .info p {
+            background-color: #f1f4ff;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>User Information</h2>
+
+        <button onclick="displayUserInfo(user)">Show User Info</button>
+
+        <!-- Details appear BELOW the button -->
+        <div class="info" id="userInfo">
+            <p id="name"></p>
+            <p id="age"></p>
+            <p id="city"></p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Object
+        const user = {
+            name: "Veera",
+            age: 22,
+            city: "Hyderabad"
+        };
+
+        function displayUserInfo(userObj) {
+            document.getElementById("name").textContent = "Name: " + userObj.name;
+            document.getElementById("age").textContent = "Age: " + userObj.age;
+            document.getElementById("city").textContent = "City: " + userObj.city;
+
+            // Show the info section
+            document.getElementById("userInfo").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

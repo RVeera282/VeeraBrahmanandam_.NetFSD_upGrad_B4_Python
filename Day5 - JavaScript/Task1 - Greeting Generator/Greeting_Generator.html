@@ -1,0 +1,103 @@
+<!-- Day 5 - JavaScript - R Veera Brahmanandam - Hands On -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Generator</title>
+</head>
+
+<body style="
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+">
+
+    <!-- Main container -->
+    <div style="
+        background-color: #ffffff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+        text-align: center;
+        width: 350px;
+    ">
+
+        <!-- Heading -->
+        <h1 style="
+            color: #4a148c;
+            margin-bottom: 20px;
+        ">
+            Greeting Generator
+        </h1>
+
+        <!-- Input box -->
+        <input 
+            type="text" 
+            id="username" 
+            placeholder="Enter user's name"
+            style="
+                width: 320px;
+                padding: 12px;
+                font-size: 16px;
+                border-radius: 8px;
+                border: 2px solid #7b1fa2;
+                outline: none;
+                margin-bottom: 15px;
+            "
+        >
+
+        <!-- Button -->
+        <button 
+            onclick="generateGreeting()"
+            style="
+                background: linear-gradient(135deg, #ff6a00, #ee0979);
+                color: white;
+                padding: 12px 20px;
+                font-size: 16px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                width: 100%;
+                font-weight: bold;
+            "
+        >
+            Generate Greeting
+        </button>
+
+        <!-- Output paragraph -->
+        <p 
+            id="greeting"
+            style="
+                margin-top: 20px;
+                font-size: 18px;
+                color: #1b5e20;
+                font-weight: bold;
+            "
+        ></p>
+
+    </div>
+
+    <script>
+        
+        // Use function keyword 
+
+        function generateGreeting() {
+            
+            // Javascript function should accept the name as a parameter
+            var name = document.getElementById("username").value;
+
+            // Variable for the greeting message must be declared inside the function
+            var message = "Hello, " +name+ "! Welcome to our websites.";
+
+            // Use document.getElementById() for DOM manipulation
+            document.getElementById("greeting").innerHTML = message;
+        }
+    </script>
+</body>
+</html>
