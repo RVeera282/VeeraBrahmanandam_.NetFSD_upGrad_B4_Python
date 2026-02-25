@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Student Profile Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Student Profile Manager</h1>
+
+    <!-- Profile Display Area -->
+    <!-- Display details dynamically using DOM -->
+    <div id="profileBox"></div>
+
+    <!-- Button to update marks -->
+    <button onclick="updateMarks(95)">Update Marks</button>
+
+    <script>
+        /* GLOBAL STUDENT OBJECT: Student object must be in global scope */
+        let student = {
+            name: "Veera",
+            rollNo: 101,
+            marks: 88
+        };
+
+        /* FUNCTION: updateStudentProfile(studentObj)
+           - Accepts object as parameter
+           - Displays details dynamically
+           - Uses DOM manipulation */
+
+        function updateStudentProfile(studentObj) {
+            document.getElementById("profileBox").innerHTML = `
+                <h2>Student Details</h2>
+                <p><strong>Name:</strong> ${studentObj.name}</p>
+                <p><strong>Roll No:</strong> ${studentObj.rollNo}</p>
+                <p><strong>Marks:</strong> ${studentObj.marks}</p>
+            `;
+        }
+
+        /* FUNCTION: updateMarks(newMarks)
+           - Updates marks using parameter
+           - Modifies shared global object
+           - Refreshes DOM without page reload */
+        function updateMarks(newMarks) {
+            student.marks = newMarks;  // object manipulation
+            updateStudentProfile(student); // refresh UI
+        }
+
+        /* INITIAL DISPLAY
+           - Display student details when page loads */
+        updateStudentProfile(student);
+    </script>
+
+</body>
+</html>
