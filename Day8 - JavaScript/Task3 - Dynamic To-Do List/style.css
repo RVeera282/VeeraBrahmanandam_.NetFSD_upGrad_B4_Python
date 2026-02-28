@@ -1,0 +1,98 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main To-Do Container */
+.todo-container {
+    background: #ffffff;
+    padding: 25px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.todo-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    gap: 10px;
+}
+
+.input-section input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.input-section button {
+    background: #667eea;
+    border: none;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.input-section button:hover {
+    background: #5a67d8;
+}
+
+/* Task List */
+#taskList {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+/* Individual Task */
+.task-item {
+    background: #f7f7f7;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Completed Task */
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Buttons */
+.actions button {
+    border: none;
+    padding: 6px 8px;
+    margin-left: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.complete-btn {
+    background: #48bb78;
+    color: white;
+}
+
+.delete-btn {
+    background: #f56565;
+    color: white;
+}
+
+.actions button:hover {
+    opacity: 0.85;
+}

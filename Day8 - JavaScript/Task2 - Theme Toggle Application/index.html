@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+
+        <h1>Color Changing Theme</h1>
+
+        <!-- Toggle Button -->
+        <!-- Create a toggle button -->
+        <button id="toggleBtn">Toggle Theme</button>
+        
+    </header>
+
+    <main>
+        <p>
+            This Blog allows users to switch between Light Mode and Dark Mode. <br>
+            The Selected theme is saved and restored using localStorage.
+        </p>
+    </main>
+
+    <script>
+
+        const toggleBtn = document.getElementById("toggleBtn");
+        const body = document.body;
+
+        // Function to apply selected theme
+        function applyTheme(theme) {
+            body.className = theme;
+        }
+
+        // Funtion to toggle theme
+        function toggleTheme() {
+            const currentTheme = body.classList.contains("dark") ? "dark" : "light";
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+            applyTheme(newTheme);
+
+            // Store theme in localStorage
+            localStorage.setItem("theme",newTheme);
+        }
+
+        // EventListner for button click
+        // Use addEventListner()
+        toggleBtn.addEventListener("click", toggleTheme);
+
+        // Load saved theme when page loads
+        const savedTheme = localStorage.getItem("theme") || "light";
+        applyTheme(savedTheme);
+
+    </script>
+</body>
+</html>

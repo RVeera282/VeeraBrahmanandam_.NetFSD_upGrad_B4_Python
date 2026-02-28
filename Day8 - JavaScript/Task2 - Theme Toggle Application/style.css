@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    transition: backgroung-color 0.4s ease, color 0.4s ease;
+}
+
+header {
+    text-align: center;
+    padding:50px;
+}
+
+main {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+main p {
+    margin-top: 70px;
+    text-align: center;
+    font-weight: bolder;
+}
+button {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Theme */
+
+body.light { 
+    background-color: #f9fafb;
+    color: #1f2933;
+}
+
+body.light header {
+    background-color: #e5e7eb;
+}
+
+body.light button {
+    background-color: #111827;
+    color: #ffffff;
+}
+
+/* Dark Theme */
+
+body.dark {
+    background-color: #111827;
+    color: #e5e7eb;
+}
+
+body.dark header {
+    background-color: #1f2937;
+}
+
+body.dark button {
+    background-color: #e5e7eb;
+    color: #111827;
+}

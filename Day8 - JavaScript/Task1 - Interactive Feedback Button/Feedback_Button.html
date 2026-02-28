@@ -1,0 +1,55 @@
+<!-- Day 8 - JavaScript - R Veera Brahmanandam - Hands On Task -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Feedback Button</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Feedback Form</h1>
+
+    <!-- Feedback box -->
+    <textarea id="feedbackInput" placeholder="Type your feedback..."></textarea>
+
+    <!-- Submit Button -->
+    <button id="feedbackBtn"><b>Submit Feedback</b></button>
+
+    <!-- Confiraton and Warnin mesages -->
+    <p id="confirmation"><b>Thank you! Your feedback submitted.</b></p>
+    <p id="warning"><b>Please enter your feedback before submitting.</b></p>
+
+    <script>
+
+        // Select button and messages
+        const btn = document.getElementById('feedbackBtn');
+        const input = document.getElementById('feedbackInput');
+        const confirmMsg = document.getElementById('confirmation');
+        const warnMsg = document.getElementById('warning');
+
+        btn.addEventListener('click', function() {
+
+            // 
+            const text = input.value.trim();
+
+            // EventListner
+            if(text === "") {
+
+                // If empty - show warning, hide confiration
+                warnMsg.style.display = 'block';
+                confirmMsg.style.display = 'none';
+            } else {
+
+                // If text exists - show confiration, hide waning
+                confirmMsg.style.display = 'block';
+                warnMsg.style.display = 'none';
+                input.value = ""; 
+            }
+        });
+    </script>
+
+</body>
+</html>
