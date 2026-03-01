@@ -1,0 +1,92 @@
+<!-- Day 8 - JavaScript - R Veera Brahmanandam - Hands On Tasks -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Product Search App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <h1>🛒 Product Search</h1>
+
+    <!-- Search Input -->
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search products..."
+    />
+
+    <!-- Product List Container -->
+    <!-- Requirement: DOM manipulation target -->
+    <ul id="productList"></ul>
+
+    <!-- No Results Message -->
+    <p id="noResults" class="hidden">❌ No Results Found</p>
+  </div>
+
+  <script>
+    
+    const state = {
+      products: [
+        "Apple iPhone",
+        "Samsung Galaxy",
+        "OnePlus Nord",
+        "Google Pixel",
+        "Sony Headphones",
+        "Apple Watch",
+        "Dell Laptop",
+        "HP Pavilion"
+      ],
+      filteredProducts: []
+    };
+
+    /* DOM REFERENCES */
+    const app = document.querySelector(".app"); // Used for event delegation
+    const productList = document.getElementById("productList");
+    const noResults = document.getElementById("noResults");
+
+    /* DISPLAY PRODUCTS
+       Requirement: Display product list from predefined array
+       Constraint: DOM manipulation
+    */
+    function renderProducts(products) {
+      productList.innerHTML = "";
+
+      products.forEach(product => {
+        const li = document.createElement("li");
+        li.textContent = product;
+        productList.appendChild(li);
+      });
+
+      // Requirement: Display "No Results Found"
+      noResults.classList.toggle("hidden", products.length !== 0);
+    }
+
+    /* FILTER LOGIC
+       Expectation: Real-time filtering */
+    function filterProducts(searchText) {
+      state.filteredProducts = state.products.filter(product =>
+        product.toLowerCase().includes(searchText.toLowerCase())
+      );
+
+      renderProducts(state.filteredProducts);
+    }
+
+    /* EVENT DELEGATION
+       Technical Constraint: Event delegation required
+       Using parent container instead of direct input listener */
+    app.addEventListener("input", function (event) {
+      if (event.target.id === "searchInput") {
+        filterProducts(event.target.value.trim());
+      }
+    });
+
+    /* INITIAL RENDER */
+    renderProducts(state.products);
+  </script>
+
+</body>
+</html>
