@@ -1,0 +1,62 @@
+<!-- Day 7 - JavaScript - R Veera Brahmanandam - Hands On Tasks -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Async Task Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app">
+    <h1>Async Task Manager</h1>
+
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Enter a task..." />
+      <button id="addBtn">Add Task</button>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <!-- ES6 module usage -->
+  <script type="module">
+    import { addTaskAsync, deleteTaskAsync, listTasksAsync } from './taskManager.js';
+
+    const taskInput = document.getElementById('taskInput');
+    const taskList = document.getElementById('taskList');
+    const addBtn = document.getElementById('addBtn');
+
+    // Render tasks using template literals
+    const renderTasks = async () => {
+      const tasks = await listTasksAsync();
+      taskList.innerHTML = tasks.map(
+        (task, index) => `
+          <li>
+            <span>${task}</span>
+            <button onclick="window.deleteTask(${index})">❌</button>
+          </li>
+        `
+      ).join('');
+    };
+
+    // Add task button event
+    addBtn.addEventListener('click', async () => {
+      if (taskInput.value.trim() === '') return;
+      await addTaskAsync(taskInput.value);
+      taskInput.value = '';
+      renderTasks();
+    });
+
+    // Make delete function global for button click
+    window.deleteTask = async (index) => {
+      await deleteTaskAsync(index);
+      renderTasks();
+    };
+
+    renderTasks();
+  </script>
+
+</body>
+</html>
