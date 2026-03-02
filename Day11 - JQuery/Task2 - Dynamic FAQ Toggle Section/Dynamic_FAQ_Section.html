@@ -1,0 +1,108 @@
+<!-- Day11 - JQuery- R Veera Brahmanandam - Hands On Tasks -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic FAQ Section</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            padding: 30px;
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* FAQ Question */
+        .faq-question {
+            background-color: #e9ecef;
+            padding: 12px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /*  */
+        .active {
+            background-color: #0d6efd;
+            color: #ffffff;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #0d6efd;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+
+        <!--  -->
+        <div class="faq">
+            <div class="faq-question" id="q1">1. What is jQuery?</div>
+            <div class="faq-answer">jQuery is a fast, lightweight Javascript library that simplifies DOM manipulation.</div>
+
+            <div class="faq-question" id="q2">2. Is jQuery still relevant?</div>
+            <div class="faq-answer">Yes, it is still used in many legacy and small-scale projects.</div>
+
+            <div class="faq-question" id="q3">3. What is slideToggle?</div>
+            <div class="faq-answer">slideToggle() smoothly shows or hides elements with sliding animation.</div>
+
+            <div class="faq-question" id="q4">4. What are jQuery events?</div>
+            <div class="faq-answer">Events allow you to respond to user actions like clicks, hover, etc.</div>
+
+            <div class="faq-question" id="q5">5. Can jQuery manipulate CSS?</div>
+            <div class="faq-answer">Yes, jQuery can add, remove, or toggle CSS classes dynamically.</div>
+        </div>
+
+        <script>
+                    /*
+                        - Use jQuery click() event
+                        - Use slideToggle() method
+                        - Highlight selected question using CSS class
+                        - Use only jQuery for DOM manipulation
+                        - No inline Javascript
+                        - Use class & ID selectors
+                        - Smooth UI interaction
+                        - Organized HTML structure
+                    */
+            $(document).ready(function() {
+                // Event handling using jQuery
+                $(".faq-question").click(function() {
+                    // Toggle the clicked question's answer
+                    $(this).next(".faq-answer").slideToggle();
+
+                    // Remove highlight from other questions
+                    $(".faq-question").not(this).removeClass("active");
+
+                    // Hide other answers
+                    $(".faq-answer").not($(this).next()).slideUp();
+
+                    // Toggle active class for selected question
+                    $(this).toggleClass("active");
+                });
+            });
+
+        </script>
+    </div>
+</body>
+</html>

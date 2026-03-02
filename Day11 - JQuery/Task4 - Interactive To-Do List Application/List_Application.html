@@ -1,0 +1,186 @@
+<!-- Day11 - JQuery - R Veera Brahmanandam - Hands On Tasks -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive To-Do List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #e9ecef;
+        }
+
+        .todo-container {
+            width: 420px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        #taskInput {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #addTaskBtn {
+            padding: 10px 15px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #addTaskBtn:hover {
+            background: #218838;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+
+        .task-text {
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .completed .task-text {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 5px;
+        }
+
+        .complete-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .counts {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            line-height: 24px; /* Spacing FIXED */
+        }
+    </style>
+</head>
+<body>
+
+<div class="todo-container">
+    <h2>To-Do List</h2>
+
+    <!-- Input & Add Button (Requirement Completed) -->
+    <div class="input-section">
+        <input type="text" id="taskInput" placeholder="Enter your task">
+        <button id="addTaskBtn">Add</button>
+    </div>
+
+    <!-- Dynamic Task List -->
+    <ul id="taskList"></ul>
+
+    <!-- Task Counts (Spacing Improved) -->
+    <div class="counts">
+        <div>Total Tasks: <span id="totalCount">0</span></div>
+        <div>Completed Tasks: <span id="completedCount">0</span></div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function () {
+
+    // UPDATE TASK COUNTS
+    // Requirement: Dynamic total & completed count 
+    function updateCounts() {
+        $("#totalCount").text($("#taskList li").length);
+        $("#completedCount").text($("#taskList li.completed").length);
+    }
+
+    // ADD TASK
+    // append() used 
+    $("#addTaskBtn").on("click", function () {
+
+        let taskText = $("#taskInput").val().trim();
+        if (taskText === "") return;
+
+        let taskItem = `
+            <li>
+                <span class="task-text">${taskText}</span>
+                <div class="btn-group">
+                    <button class="complete-btn">Complete</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            </li>
+        `;
+
+        $("#taskList").append(taskItem);
+        $("#taskInput").val("");
+        updateCounts();
+    });
+
+    // COMPLETE TASK
+    // toggleClass() + event delegation 
+    $("#taskList").on("click", ".complete-btn", function () {
+        $(this).closest("li").toggleClass("completed");
+        updateCounts();
+    });
+
+    // DELETE TASK 
+    // remove() used 
+    $("#taskList").on("click", ".delete-btn", function () {
+        $(this).closest("li").remove();
+        updateCounts();
+    });
+
+    // on() used for dynamic elements 
+});
+</script>
+
+</body>
+</html>

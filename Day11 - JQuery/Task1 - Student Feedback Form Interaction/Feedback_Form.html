@@ -1,0 +1,149 @@
+<!-- Day11 - JQuery - R Veera Brahmanandam - Hands On Tasks -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback Form Interaction</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        form {
+            width: 350px;
+            padding: 40px;
+            border:  1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        select {
+            width: 94%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+
+            display: block;
+            margin: 20px auto;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        
+    </style>
+
+</head>
+<body>
+    <h1>Student Feedback Form</h1>
+
+    <form id="feedbackForm">
+
+        <label>Name: </label>
+        <input type="text" id="name" name="name" placeholder="Enter your name"> <br><br>
+
+        <label>Email: </label>
+        <input type="text" id="email" name="email" placeholder="Enter email address"> <br><br>
+
+        <label>Course Rating: </label>
+        <select id="rating">
+            <option value="">Select Rating</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Average">Average</option>
+            <option value="Poor">Poor</option>
+        </select><br><br>
+
+        <label>Comments: </label> <br>
+        <textarea id="comments" rows="4" placeholder="Enter comments...."></textarea><br><br>
+
+        <button id="submit">Submit</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        $(document).ready(function() {
+            /*
+            - Use jQuery event handling
+            - Validate inputs on submit click
+            */ 
+            $("#feedbackForm").submit(function(e) {
+                e.preventDefault(); // Prevent page reload
+
+                // Use jQuery selectors to capture inputs
+                let name = $.trim($("#name").val());
+                let email = $.trim($("#email").val());
+
+                // Validations done only using jQuery
+                if(name === "" && email === "") {
+                    $("#message").text("Please enter both Name and Email.").removeClass("Success").addClass("error");
+                }
+                // name empty
+                else if(name === "") {
+                    $("#message").text("Please enter the name").removeClass("success").addClass("error");
+                }
+                // email empty
+                else if(email === "") {
+                    $("#message").text("Please enter the email").removeClass("success").addClass("error")
+                }
+                else {
+                    // Display success message dynamically
+                    // Clear form after successful submission
+                    $("#message").text("Thank you! Your feedback has been submitted successfully.").removeClass("error").addClass("success");
+
+                    // Clear form fields using jQuery
+                    $("#feedbackForm")[0].reset();
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>
